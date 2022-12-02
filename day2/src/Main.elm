@@ -43,10 +43,10 @@ type Msg
     | FindSolutions
 
 
-type alias RSP = (Char, Char)
+type alias RPS = (Char, Char)
 
-createRSPFromString : String -> RSP
-createRSPFromString xs =
+createRPSFromString : String -> RPS
+createRPSFromString xs =
     case uncons xs of
         Just (x1, r1) ->
             case uncons r1 of 
@@ -62,15 +62,15 @@ createRSPFromString xs =
             ('a', 'a')
 
 
-parseInput : String -> List RSP
+parseInput : String -> List RPS
 parseInput input =
     split "\n" input
-    |> map createRSPFromString
+    |> map createRPSFromString
 
 
-scoreRSP : RSP -> Int
-scoreRSP rsp =
-    case rsp of
+scoreRPS : RPS -> Int
+scoreRPS rps =
+    case rps of
         ('A', 'X') ->
             4
         ('A', 'Y') ->
@@ -92,14 +92,14 @@ scoreRSP rsp =
         _ ->
             0
 
-scoreTournament : List RSP -> Int
+scoreTournament : List RPS -> Int
 scoreTournament t =
-    map scoreRSP t
+    map scoreRPS t
     |> sum
 
-scoreTrueRSP : RSP -> Int
-scoreTrueRSP rsp =
-    case rsp of
+scoreTrueRPS : RPS -> Int
+scoreTrueRPS rps =
+    case rps of
         ('A', 'X') ->
             3
         ('A', 'Y') ->
@@ -121,9 +121,9 @@ scoreTrueRSP rsp =
         _ ->
             0
 
-scoreTrueTournament : List RSP -> Int
+scoreTrueTournament : List RPS -> Int
 scoreTrueTournament t =
-    map scoreTrueRSP t
+    map scoreTrueRPS t
     |> sum
 
 update : Msg -> Model -> Model
