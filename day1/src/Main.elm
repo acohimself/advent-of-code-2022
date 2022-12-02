@@ -10,7 +10,6 @@
 
 module Main exposing (main)
 
--- I don't use all these, lol @ dead code non-removal
 
 import Browser
 import Debug exposing (log, toString)
@@ -20,7 +19,6 @@ import Html.Events exposing (onClick, onInput)
 import List exposing (foldl, map, member, reverse, sort)
 import Maybe exposing (Maybe, withDefault)
 import String exposing (replace, split, toInt)
-
 
 
 -- caloriesText is the input from
@@ -42,17 +40,11 @@ initialModel =
     }
 
 
-
-
 type Msg
     = InputFrequencyText String
     | FindElfWithMostCalories
     | LoadFromCache
 
-
-type Elf
-    = List Int
-    | ParseError
 
 
 unsafeToInt : String -> Int
