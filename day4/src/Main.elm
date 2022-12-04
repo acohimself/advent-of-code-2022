@@ -148,7 +148,7 @@ view model =
     div []
         [ div [ class "container" ]
             [ div [ class "w-1/2 mx-auto" ]
-                [ h2 [ class "text-xl" ] [ text "Day2: Rock Paper Scissors" ]
+                [ h2 [ class "text-xl" ] [ text "Day4: Camp Cleanup" ]
                 ]
             , div [ class "flex space-x-8 justify-center" ]
                 [ a
